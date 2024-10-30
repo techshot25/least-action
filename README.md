@@ -164,9 +164,9 @@ $$
 
 Let's integrate the second term by parts to get:
 
-$$
-\int_{t_1}^{t_2} \frac{\partial L}{\partial \dot{q}} \frac{d}{dt}(\delta q) dt = \left [ \frac{\partial L}{\partial \dot{q}} \delta q \right ]_{t_1}^{t_2} - \int_{t_1}^{t_2} \frac{d}{dt} \left ( \frac{\partial L}{\partial \dot{q}} \right ) \delta q  dt
-$$
+```math
+\int_{t_1}^{t_2}\frac{\partial L}{\partial \dot{q}}\frac{d}{dt}(\delta q)dt=\left[\frac{\partial L}{\partial \dot{q}}\delta q \right ]_{t_1}^{t_2}-\int_{t_1}^{t_2}\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{q}}\right)\delta q dt
+```
 
 Note that we want the variations to vanish at the starting and end points $\delta q(t_1) = \delta q(t_2) = 0$ so this term goes to zero.
 
