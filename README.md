@@ -147,6 +147,7 @@ Before moving forward, let's take a look at what happens when we take the first 
 $$\delta S = S(q+\delta q) - S(q)$$
 
 In the case of the Lagrangian, this becomes
+
 $$ \delta L(q, \dot{q}, t) = L(q + \delta q, \dot{q} + \delta \dot{q}, t) - L(q, \dot{q}, t)$$
 
 And by looking at the first few terms of the series expansion, we have.
@@ -168,6 +169,7 @@ $$
 $$
 
 Note that we want the variations to vanish at the starting and end points $\delta q(t_1) = \delta q(t_2) = 0$ so this term goes to zero.
+
 $$
 \left [ \frac{\partial L}{\partial \dot{q}} \delta q \right ]_{t_1}^{t_2} = 0
 $$
