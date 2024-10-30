@@ -5,12 +5,15 @@ Credit to [Veritasium](https://youtu.be/Q10_srZ-pbs?si=i39xyI3WLzjpCByf). Watch 
 ## The Basics
 ### The Law of Least Action
 We start by defining the original form as defined by Maupertuis.
+
 $$
 S_{0} = \sum mvs
 $$
+
 In here $S_{0}$ is the action principle, $m$ is the mass, $v$ is the velocity, and $s$ is the position.
 
 Euler converted the sum into an integral, which is what we will do.
+
 $$
 S_{0} = \int_{c}  mv ds
 $$
@@ -52,52 +55,57 @@ And this is how we will start the derivation.
 ### Derivation
 
 Starting with Maupertuis action definition.
+
 $$
 \delta S_0 = \delta \sum mvs
 $$
 
 The Euler integral definition, however, is more appropriate to start with.
+
 $$
 \delta S_0 = \delta \int mv ds = 0
 $$
 
 Recall that the velocity is the time derivative of the position.
+
 $$
-v = \frac{ds}{dt} \rightarrow ds = v\;dt 
+v = \frac{ds}{dt} \rightarrow ds = vdt 
 $$
 
 So we can rewrite the variation in action as:
+
 $$
 \delta \int mv^2 dt = 0
 $$
 
 The definition of kinetic energy is $T=\frac{1}{2}mv^2$ so this becomes:
+
 $$
-\delta \int 2T dt = \delta \int (T + T)\; dt = 0
+\delta \int 2T dt = \delta \int (T + T) dt = 0
 $$
 
 The definition of total energy is $E=T+V$ or $T=E-V$ so we can replace one of them to become:
 
 $$
-\delta \int (T + E - V)\; dt = \delta \int (T - V)\; dt + \delta \int E \; dt = 0
+\delta \int (T + E - V) dt = \delta \int (T - V) dt + \delta \int E  dt = 0
 $$
 
 And since $E$ is independent of the path, we can take it out of the integral to get:
 
 $$
-\delta \int (T - V)\; dt + \delta (E\;t) = 0
+\delta \int (T - V) dt + \delta (Et) = 0
 $$
 
-We can use the product rule for $E\;t$ to get:
+We can use the product rule for $Et$ to get:
 
 $$
-\delta \int (T - V)\; dt + \delta (E) \;t + E \delta(t) = 0
+\delta \int (T - V) dt + \delta (E) t + E \delta(t) = 0
 $$
 
 Recall that energy is conserved so the variation of the total energy is zero.
 
 $$
-\delta \int (T - V)\; dt = - E \delta(t) 
+\delta \int (T - V) dt = - E \delta(t) 
 $$
 
 Now we have to make a third assumption if we are to consider this an optimization problem.
@@ -109,7 +117,7 @@ This assumption further assumes that all perturbations of the path $x(t)$ must t
 With this assumption, our final least action takes this form:
 
 $$
-\delta \int (T - V)\; dt = 0
+\delta \int (T - V) dt = 0
 $$
 
 Now we have fully converted the least principle into the difference between kinetic and potential energy. This is known as Hamilton's principle.
@@ -117,7 +125,7 @@ Now we have fully converted the least principle into the difference between kine
 The action definition in terms of energies can be written as:
 
 $$
-S = \int (T - V)\; dt
+S = \int (T - V) dt
 $$
 
 
@@ -127,10 +135,10 @@ To derive the E-L equations, we must first assume that we have a path $q(t)$ and
 
 The difference between the kinetic and potential energy is known as the Lagrangian:
 
-$$L(q, \.q, t) = T-V$$
+$$L(q, \dot{q}, t) = T-V$$
 
 $$
-\delta \int (T - V)\; dt = \delta \int L(q,\.q, t)\; dt = 0
+\delta \int (T - V) dt = \delta \int L(q,\dot{q}, t) dt = 0
 $$
 
 #### Caveat
@@ -139,48 +147,48 @@ Before moving forward, let's take a look at what happens when we take the first 
 $$\delta S = S(q+\delta q) - S(q)$$
 
 In the case of the Lagrangian, this becomes
-$$ \delta L(q, \.q, t) = L(q + \delta q, \.q + \delta \.q, t) - L(q, \.q, t)$$
+$$ \delta L(q, \dot{q}, t) = L(q + \delta q, \dot{q} + \delta \dot{q}, t) - L(q, \dot{q}, t)$$
 
 And by looking at the first few terms of the series expansion, we have.
 
 $$
-L(q + \delta q, \.q + \delta \.q, t) \approx L(q, \.q, t) + \frac{\partial L}{\partial q} \delta q + \frac{\partial L}{\partial \.q} \delta \.q
+L(q + \delta q, \dot{q} + \delta \dot{q}, t) \approx L(q, \dot{q}, t) + \frac{\partial L}{\partial q} \delta q + \frac{\partial L}{\partial \dot{q}} \delta \dot{q}
 $$
 
 Now applying the variations the Lagrangian we get:
 
 $$
-\int_{t_1}^{t_2} \left ( \frac{\partial L}{\partial q} \delta q + \frac{\partial L}{\partial \.q} \frac{d}{dt}(\delta q) \right) dt = 0
+\int_{t_1}^{t_2} \left ( \frac{\partial L}{\partial q} \delta q + \frac{\partial L}{\partial \dot{q}} \frac{d}{dt}(\delta q) \right) dt = 0
 $$
 
 Let's integrate the second term by parts to get:
 
 $$
-\int_{t_1}^{t_2} \frac{\partial L}{\partial \.q} \frac{d}{dt}(\delta q)\; dt = \left [ \frac{\partial L}{\partial \.q} \delta q \right ]_{t_1}^{t_2} - \int_{t_1}^{t_2} \frac{d}{dt} \left ( \frac{\partial L}{\partial \.q} \right ) \delta q \; dt
+\int_{t_1}^{t_2} \frac{\partial L}{\partial \dot{q}} \frac{d}{dt}(\delta q) dt = \left [ \frac{\partial L}{\partial \dot{q}} \delta q \right ]_{t_1}^{t_2} - \int_{t_1}^{t_2} \frac{d}{dt} \left ( \frac{\partial L}{\partial \dot{q}} \right ) \delta q  dt
 $$
 
 Note that we want the variations to vanish at the starting and end points $\delta q(t_1) = \delta q(t_2) = 0$ so this term goes to zero.
 $$
-\left [ \frac{\partial L}{\partial \.q} \delta q \right ]_{t_1}^{t_2} = 0
+\left [ \frac{\partial L}{\partial \dot{q}} \delta q \right ]_{t_1}^{t_2} = 0
 $$
 
 Leaving us with:
 
 $$
-\int_{t_1}^{t_2} \left ( \frac{\partial L}{\partial q} \delta q - \frac{d}{dt} \left ( \frac{\partial L}{\partial \.q} \right ) \delta q  \right ) dt = 0
+\int_{t_1}^{t_2} \left ( \frac{\partial L}{\partial q} \delta q - \frac{d}{dt} \left ( \frac{\partial L}{\partial \dot{q}} \right ) \delta q  \right ) dt = 0
 $$
 
 Factor out $\delta q$ to get:
 
 $$
-\int_{t_1}^{t_2} \left ( \left [ \frac{\partial L}{\partial q} - \frac{d}{dt} \left ( \frac{\partial L}{\partial \.q} \right ) \right ] \delta q \right ) dt  = 0
+\int_{t_1}^{t_2} \left ( \left [ \frac{\partial L}{\partial q} - \frac{d}{dt} \left ( \frac{\partial L}{\partial \dot{q}} \right ) \right ] \delta q \right ) dt  = 0
 $$
 
 Now remember that this has to be zero for all possible $\delta q$ which means that this portion of the integrand has to be zero.
 
 $$
 \boxed{
-    \frac{\partial L}{\partial q} - \frac{d}{dt} \left ( \frac{\partial L}{\partial \.q} \right ) = 0
+    \frac{\partial L}{\partial q} - \frac{d}{dt} \left ( \frac{\partial L}{\partial \dot{q}} \right ) = 0
 }
 $$
 
